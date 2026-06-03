@@ -73,6 +73,14 @@
                                     </manifest>
                                 </channel>
                             </channels>
+                            <feature-packs>
+                                <feature-pack>
+                                    <location>org.jboss.eap:wildfly-ee-galleon-pack</location>
+                                </feature-pack>
+                                <feature-pack>
+                                    <location>org.jboss.eap.cloud:eap-cloud-galleon-pack</location>
+                                </feature-pack>
+                            </feature-packs>
                         </configuration>
                         <executions>
                             <execution>
