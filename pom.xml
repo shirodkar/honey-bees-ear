@@ -17,6 +17,26 @@
         <jakartaee.version>11.0.0</jakartaee.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jboss</id>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+
     <modules>
         <module>backend-api</module>
         <module>frontend</module>

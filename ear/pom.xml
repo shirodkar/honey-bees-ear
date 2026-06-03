@@ -54,4 +54,37 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>openshift</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.jboss.eap.plugins</groupId>
+                        <artifactId>eap-maven-plugin</artifactId>
+                        <version>${version.eap.plugin}</version>
+                        <configuration>
+                            <channels>
+                                <channel>
+                                    <manifest>
+                                        <groupId>org.jboss.eap.channels</groupId>
+                                        <artifactId>eap-8.1</artifactId>
+                                    </manifest>
+                                </channel>
+                            </channels>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>package</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
