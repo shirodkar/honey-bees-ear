@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <title>The Honey Bee - Apis mellifera</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #0d1117;
+            color: #e6edf3;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            color: #f0a500;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            font-size: 1.25rem;
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: #f0a500;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(240, 165, 0, 0.2);
+            font-weight: 600;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(240, 165, 0, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Overview */
+        .overview-card {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c9d1d9;
+        }
+
+        .taxonomy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #30363d;
+        }
+
+        .taxonomy-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .taxonomy-rank {
+            font-size: 0.75rem;
+            color: #8b949e;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.15rem;
+        }
+
+        .taxonomy-value {
+            color: #f0a500;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Roles */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .role-card h3 {
+            color: #f0a500;
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .role-population {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .role-description {
+            color: #c9d1d9;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .role-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-card li {
+            padding: 0.35rem 0 0.35rem 1.2rem;
+            position: relative;
+            font-size: 0.9rem;
+            color: #c9d1d9;
+        }
+
+        .role-card li::before {
+            content: "\203A";
+            position: absolute;
+            left: 0;
+            color: #f0a500;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Facts */
+        .category-section {
+            margin-bottom: 2rem;
+        }
+
+        .category-name {
+            font-size: 1.2rem;
+            color: #e6edf3;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .fact-card .fact-badge {
+            display: inline-block;
+            background: rgba(240, 165, 0, 0.12);
+            color: #f0a500;
+            padding: 0.15rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.6rem;
+        }
+
+        .fact-card h4 {
+            color: #e6edf3;
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-card p {
+            color: #8b949e;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            border-top: 1px solid #30363d;
+            color: #484f58;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #f0a500;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 1rem; }
+            .header h1 { font-size: 2rem; }
+            .roles-grid { grid-template-columns: 1fr; }
+            .facts-grid { grid-template-columns: 1fr; }
+            .taxonomy-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="container">
+
+        <div class="header">
+            <h1>The Honey Bee</h1>
+            <p class="subtitle">Apis mellifera</p>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="section">
+            <h2 class="section-title">Overview</h2>
+            <div class="card overview-card">
+                <p>#{honeyBeeBean.description}</p>
+                <div class="taxonomy-grid">
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Kingdom</span>
+                        <span class="taxonomy-value">Animalia</span>
+                    </div>
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Phylum</span>
+                        <span class="taxonomy-value">Arthropoda</span>
+                    </div>
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Class</span>
+                        <span class="taxonomy-value">Insecta</span>
+                    </div>
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Order</span>
+                        <span class="taxonomy-value">Hymenoptera</span>
+                    </div>
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Family</span>
+                        <span class="taxonomy-value">Apidae</span>
+                    </div>
+                    <div class="taxonomy-item">
+                        <span class="taxonomy-rank">Genus</span>
+                        <span class="taxonomy-value">Apis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colony Roles Section -->
+        <div class="section">
+            <h2 class="section-title">Colony Roles</h2>
+            <div class="roles-grid">
+                <ui:repeat value="#{honeyBeeBean.roles}" var="role">
+                    <div class="card role-card">
+                        <h3>#{role.name}</h3>
+                        <p class="role-population">~#{role.populationPercentage}% of colony population</p>
+                        <p class="role-description">#{role.description}</p>
+                        <ul>
+                            <ui:repeat value="#{role.responsibilities}" var="resp">
+                                <li>#{resp}</li>
+                            </ui:repeat>
+                        </ul>
+                    </div>
+                </ui:repeat>
+            </div>
+        </div>
+
+        <!-- Facts Section -->
+        <div class="section">
+            <h2 class="section-title">Fascinating Facts</h2>
+            <ui:repeat value="#{honeyBeeBean.factCategories}" var="category">
+                <div class="category-section">
+                    <h3 class="category-name">#{category.name}</h3>
+                    <div class="facts-grid">
+                        <ui:repeat value="#{category.facts}" var="fact">
+                            <div class="card fact-card">
+                                <span class="fact-badge">#{fact.category}</span>
+                                <h4>#{fact.title}</h4>
+                                <p>#{fact.description}</p>
+                            </div>
+                        </ui:repeat>
+                    </div>
+                </div>
+            </ui:repeat>
+        </div>
+
+        <div class="footer">
+            <p>Honey Bees Information Portal | Backend REST API available at
+                <a href="/api/api/bees/overview">/api/api/bees</a>
+            </p>
+        </div>
+
+    </div>
+</h:body>
+</html>
