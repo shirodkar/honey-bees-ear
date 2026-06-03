@@ -1,7 +1,7 @@
 package com.example.honeybees.api;
 
-import jakarta.ws.ApplicationPath;
-import jakarta.ws.core.Application;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 
 /**
  * @author [Your Name]

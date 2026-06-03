@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.example.honeybees.model.BeeFact;
+import com.example.honeybees.model.BeeRole;
+
 @Path("/bees")
 @jakarta.enterprise.context.RequestScoped
 @Produces(MediaType.APPLICATION_JSON)
