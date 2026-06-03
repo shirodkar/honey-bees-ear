@@ -26,8 +26,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee-api</artifactId>
+                <groupId>jakarta.platform</groupId>
+                <artifactId>jakarta.jakartaee-api</artifactId>
                 <version>${javaee.version}</version>
                 <scope>provided</scope>
             </dependency>
@@ -43,6 +43,13 @@
                 <version>${project.version}</version>
                 <type>war</type>
             </dependency>
+            <!-- Optional: for JBoss EAP 7.3 or later -->
+            <!-- <dependency>
+                <groupId>com.sun.activation</groupId>
+                <artifactId>jakarta.jakartaee-api</artifactId>
+                <version>${javaee.version}</version>
+                <scope>provided</scope>
+            </dependency> -->
         </dependencies>
     </dependencyManagement>
 </project>
