@@ -29,6 +29,30 @@
 
     <build>
         <finalName>honey-bees-ear</finalName>
+
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-scm-plugin</artifactId>
+            <version>2.0.1</version>
+            <executions>
+                <execution>
+                    <id>checkout-external-repo</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>checkout</goal>
+                    </goals>
+                    <configuration>
+                        <!-- SCM Connection URL format: scm:git:git:// or scm:git:https:// -->
+                        <connectionUrl>scm:git:https://github.com/shirodkar/my-gitops.git</connectionUrl>
+                        <scmVersion>main</scmVersion>
+                        <scmVersionType>branch</scmVersionType>
+                        <includes>eap/applications/honeybees-ear/**/*</includes>
+                        <checkoutDirectory>${project.build.directory}/eap-dependencies</checkoutDirectory>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
