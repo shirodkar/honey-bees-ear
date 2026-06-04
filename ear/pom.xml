@@ -54,7 +54,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
@@ -110,6 +110,9 @@
                                 <layer>cloud-server</layer>
                                 <layer>jsf</layer>
                             </layers>
+                            <extra-server-content-dirs>
+							    <extra-content>${project.build.directory}/eap-dependencies/eap/applications/honeybees-ear/extra-content</extra-content>
+						    </extra-server-content-dirs>
                         </configuration>
                         <executions>
                             <execution>
