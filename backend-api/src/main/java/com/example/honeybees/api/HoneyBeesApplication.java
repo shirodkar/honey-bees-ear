@@ -1,8 +1,8 @@
 package com.example.honeybees.api;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import io.quarkus.runtime.QuarkusApplication;
 
+@QuarkusApplication
 @ApplicationPath("/api")
-public class HoneyBeesApplication extends Application {
+public class HoneyBeesApplication {
 }
