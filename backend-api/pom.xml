@@ -10,14 +10,10 @@
         <quarkus.platform.version>3.1.0.Final</quarkus.platform.version>
     </properties>
 
-    <parent>
-        <groupId>com.example.honeybees</groupId>
-        <artifactId>honey-bees-ear</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
+    <groupId>com.example.honeybees</groupId>
     <artifactId>backend-api</artifactId>
     <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
     <name>Honey Bees - Backend API</name>
 
     <dependencyManagement>
@@ -33,11 +29,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy-reactive</artifactId>
