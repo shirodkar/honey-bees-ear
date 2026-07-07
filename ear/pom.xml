@@ -17,11 +17,6 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>backend-api</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>frontend</artifactId>
             <type>war</type>
         </dependency>
@@ -39,11 +34,6 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <outputFileNameMapping>@{artifactId}@@{dashClassifier?}@.@{extension}@</outputFileNameMapping>
                     <modules>
-                        <webModule>
-                            <groupId>com.example.honeybees</groupId>
-                            <artifactId>backend-api</artifactId>
-                            <contextRoot>/api</contextRoot>
-                        </webModule>
                         <webModule>
                             <groupId>com.example.honeybees</groupId>
                             <artifactId>frontend</artifactId>
