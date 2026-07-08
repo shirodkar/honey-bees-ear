@@ -19,12 +19,6 @@
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
             <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>jakarta.ws.rs</groupId>
-                    <artifactId>jakarta-ws-rs-api</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 

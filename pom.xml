@@ -30,12 +30,6 @@
                 <artifactId>jakarta.jakartaee-api</artifactId>
                 <version>${javaee.version}</version>
                 <scope>provided</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>jakarta.ws.rs</groupId>
-                        <artifactId>jsr311-api</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>${project.groupId}</groupId>
