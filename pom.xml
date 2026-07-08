@@ -14,7 +14,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <javaee.version>8.0</javaee.version>
+        <javaee.version>11.0.0</javaee.version>
     </properties>
 
     <modules>
@@ -26,13 +26,13 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>javax</groupId>
-                <artifactId>javaee-api</artifactId>
+                <groupId>jakarta.platform</groupId>
+                <artifactId>jakarta.jakartaee-api</artifactId>
                 <version>${javaee.version}</version>
                 <scope>provided</scope>
                 <exclusions>
                     <exclusion>
-                        <groupId>javax.ws.rs</groupId>
+                        <groupId>jakarta.ws.rs</groupId>
                         <artifactId>jsr311-api</artifactId>
                     </exclusion>
                 </exclusions>
