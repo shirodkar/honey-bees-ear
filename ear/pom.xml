@@ -42,7 +42,7 @@
                         <webModule>
                             <groupId>com.example.honeybees</groupId>
                             <artifactId>backend-api</artifactId>
-                            <contextRoot>/api</contextRoot>
+                            <contextRoot>/backend</contextRoot>
                         </webModule>
                         <webModule>
                             <groupId>com.example.honeybees</groupId>
