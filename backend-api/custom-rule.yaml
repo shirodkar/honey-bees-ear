@@ -1,0 +1,17 @@
+- ruleID: set-quarkus-version
+  category: mandatory
+  effort: 1
+  description: Set the Quarkus version to 3.37.0 or higher in the pom.xml file. Upgrade to the latest Quarkus version to ensure compatibility with the latest features and security patches.
+  labels:
+    - konveyor.io/source=java
+    - konveyor.io/target=quarkus
+  links:
+    - url: https://mvnrepository.com/artifact/io.quarkus.platform/quarkus-bom
+      title: Quarkus BOM
+  when:
+    builtin.xml:
+      xpath: "//quarkus.platform.version[matches(text(), '^[1-2]\\.|^3\\.(0|1|2|3[0-6])\\.')]"
+  message: "Quarkus platform version is below the required minimum of 3.37.0. Please upgrade to 3.37.0 or higher. Check the Quarkus BOM for the latest version: https://mvnrepository.com/artifact/io.quarkus.platform/quarkus-bom"
+  tag:
+    - quarkus
+    - version-upgrade
