@@ -1,0 +1,19 @@
+- ruleID: replace-parent-pom-001
+  description: Replace honey-bees-ear parent POM with wasps-ear parent POM
+  category: mandatory
+  effort: 1
+  labels:
+    - konveyor.io/source=eap7
+    - konveyor.io/target=eap8+
+  message: |
+    Replace the parent POM from:
+      <groupId>com.example.honeybees</groupId>
+      <artifactId>honey-bees-ear</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+    with:
+      <groupId>com.example.wasps</groupId>
+      <artifactId>wasps-ear</artifactId>
+      <version>1.0.0</version>
+  when:
+    builtin.xml:
+      xpath: "//*[local-name()='parent']/*[local-name()='artifactId' and text()='honey-bees-ear']"
